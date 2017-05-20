@@ -8,34 +8,37 @@ public class MyFirstProgram {
     hello("Alexei");
 
     Square s = new Square(5);
-
-
-    double l = 5;
-
-    double a = 4;
-    double b = 6;
     Rectangle r = new Rectangle(5, 2);
+    Point p1 = new Point(3, -4);
+    Point p2 = new Point(-3, 5);
 
+    double tempDistance = calculateDistanceBetweenTwoPoints(p1, p2);
 
-    System.out.println("Area of square : " + "len " + s.l + " = " + area(s));
-    System.out.println("Area of rectangle : " + "width " + r.a + " and " + "length " + r.b + " = " + area(r));
+    System.out.println("Area of square : " + "len " + s.l + " = " + calculateOfSquareArea(s));
+    System.out.println("Area of rectangle : " + "width " + r.a + " and " + "length " + r.b + " = " + calculateOfRectangleArea(r));
+    System.out.println("Distance between points is: " + " = " + Math.sqrt(tempDistance));
+
   }
 
   public static void hello(String somebody) {
 
     System.out.println("Hello " + somebody + " ! ");
-
   }
 
 
-  public static double area(Square s) {
+  public static double calculateOfSquareArea(Square s) {
 
     return s.l * s.l;
   }
 
-  public static double area(Rectangle r) {
+  public static double calculateOfRectangleArea(Rectangle r) {
 
     return r.a * r.b;
+  }
+
+  public static double calculateDistanceBetweenTwoPoints(Point p1, Point p2) {
+
+    return ((p1.x - p1.y) * (p1.x - p1.y)) + ((p2.x - p2.y) * (p2.x - p2.y));
   }
 
 }
