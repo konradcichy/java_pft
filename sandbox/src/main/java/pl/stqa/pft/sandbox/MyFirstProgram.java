@@ -7,14 +7,18 @@ public class MyFirstProgram {
     hello("user");
     hello("Alexei");
 
+    Square s = new Square(5);
+
+
     double l = 5;
 
     double a = 4;
     double b = 6;
+    Rectangle r = new Rectangle(5, 2);
 
 
-    System.out.println("Area of square : " + "len " + l + " = " + area(l));
-    System.out.println("Area of rectangle : " + "width " + a + " and " + "length " + b + " = " + area(a, b));
+    System.out.println("Area of square : " + "len " + s.l + " = " + area(s));
+    System.out.println("Area of rectangle : " + "width " + r.a + " and " + "length " + r.b + " = " + area(r));
   }
 
   public static void hello(String somebody) {
@@ -24,14 +28,14 @@ public class MyFirstProgram {
   }
 
 
-  public static double area(double len) {
+  public static double area(Square s) {
 
-    return len * len;
+    return s.l * s.l;
   }
 
-  public static double area(double a, double b) {
+  public static double area(Rectangle r) {
 
-    return a * b;
+    return r.a * r.b;
   }
 
 }
