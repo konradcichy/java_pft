@@ -9,14 +9,20 @@ public class MyFirstProgram {
 
     Square s = new Square(5);
     Rectangle r = new Rectangle(5, 2);
-    Point p1 = new Point(3, -4);
-    Point p2 = new Point(-3, 5);
+    Point p1 = new Point(1, 2);
+    Point p2 = new Point(1, 2);
+    Point p3 = new Point(1,2,1,2);
 
-    double tempDistance = calculateDistanceBetweenTwoPoints(p1, p2);
+
+    double tempDistanceFirstMethod = calculateDistanceBetweenTwoPoints(p1, p2);
+    double tempDistanceSecondMethod = p3.calculatePointsDistance(p3.x1,p3.x2,p3.y1,p3.y2);
 
     System.out.println("Area of square : " + "len " + s.l + " = " + calculateOfSquareArea(s));
     System.out.println("Area of rectangle : " + "width " + r.a + " and " + "length " + r.b + " = " + calculateOfRectangleArea(r));
-    System.out.println("Distance between points is: " + " = " + Math.sqrt(tempDistance));
+    System.out.println("Distance between points is: " + " = " + Math.sqrt(tempDistanceFirstMethod));
+    System.out.println("Distance between points is: " + " = " +  Math.sqrt(tempDistanceSecondMethod));
+    System.out.println(tempDistanceFirstMethod == tempDistanceSecondMethod);
+
 
   }
 
@@ -38,7 +44,7 @@ public class MyFirstProgram {
 
   public static double calculateDistanceBetweenTwoPoints(Point p1, Point p2) {
 
-    return ((p1.x - p1.y) * (p1.x - p1.y)) + ((p2.x - p2.y) * (p2.x - p2.y));
+    return (Math.pow(p1.x - p1.y,2))  + (Math.pow(p2.x - p2.y,2));
   }
 
 }
