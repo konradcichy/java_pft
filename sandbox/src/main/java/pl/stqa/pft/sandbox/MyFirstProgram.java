@@ -19,8 +19,8 @@ public class MyFirstProgram {
 
     System.out.println("Area of square : " + "len " + s.l + " = " + calculateOfSquareArea(s));
     System.out.println("Area of rectangle : " + "width " + r.a + " and " + "length " + r.b + " = " + calculateOfRectangleArea(r));
-    System.out.println("Distance between points is: " + " = " + Math.sqrt(tempDistanceFirstMethod));
-    System.out.println("Distance between points is: " + " = " +  Math.sqrt(tempDistanceSecondMethod));
+    System.out.println("Distance between points is: " + " = " + tempDistanceFirstMethod);
+    System.out.println("Distance between points is: " + " = " +  tempDistanceSecondMethod);
     System.out.println(tempDistanceFirstMethod == tempDistanceSecondMethod);
 
 
@@ -44,7 +44,7 @@ public class MyFirstProgram {
 
   public static double calculateDistanceBetweenTwoPoints(Point p1, Point p2) {
 
-    return (Math.pow(p1.x - p1.y,2))  + (Math.pow(p2.x - p2.y,2));
+    return Math.sqrt((Math.pow(p1.x - p1.y,2))  + (Math.pow(p2.x - p2.y,2)));
   }
 
 }
