@@ -12,5 +12,8 @@ public class Square {
     this.l = l;
   }
 
+  protected  double area() {
 
+    return this.l * this.l;
+  }
 }

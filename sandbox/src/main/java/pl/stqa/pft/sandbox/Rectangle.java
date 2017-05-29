@@ -15,5 +15,10 @@ public class Rectangle {
 
   }
 
+  public  double calculateOfRectangleArea() {
+
+    return this.a * this.b;
+  }
+
 
 }
