@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class PointTests {
 
   @Test
-  public void testDistance() {
+  public void testDistanceNaturalNumber() {
     Point a = new Point(1, 2);
     Point b = new Point(3, 4);
 
@@ -17,7 +17,7 @@ public class PointTests {
   }
 
   @Test
-  void secondTestDistance() {
+  public void testDistanceZero() {
     Point c = new Point(0, 0);
     Point d = new Point(0, 0);
 
@@ -25,13 +25,23 @@ public class PointTests {
   }
 
   @Test
-  void negativeTest() {
+  public void negativeTest() {
     Point e = new Point(-1, -1);
     Point f = new Point(0, 2435338.00000020);
 
     Assert.assertEquals(e.calculatePointsDistance(f), 1.0);
+  }
+
+  @Test void floatingTest(){
+    Point g = new Point(2.43353,1.0894);
+    Point h = new Point(98553.222,98236.11344);
+
+    Assert.assertEquals(g.calculatePointsDistance(h), 139148.76160497466);
 
   }
+
+
+
 
 
 }
