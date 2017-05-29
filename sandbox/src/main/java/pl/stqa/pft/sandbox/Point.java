@@ -5,13 +5,7 @@ package pl.stqa.pft.sandbox;
  */
 public class Point {
 
-  double x;
-  double y;
-
-  double x1;
-  double x2;
-  double y1;
-  double y2;
+  double x, y;
 
   public Point(double x, double y) {
 
@@ -20,18 +14,9 @@ public class Point {
 
   }
 
-  public Point (double x1, double x2, double y1, double y2){
-    this.x1 = x1;
-    this.x2 = x2;
-    this.y1 = y1;
-    this.y2 = y2;
+  public double calculatePointsDistance(Point b){
 
-
-  }
-
-  public double calculatePointsDistance(double x1, double x2, double y1, double y2){
-
-    return Math.sqrt(Math.pow(x1 - x2,2) + Math.pow(y1-y2,2));
+    return Math.sqrt(Math.pow((x - b.x),2) + Math.pow((y - b.y),2));
   }
 
 
