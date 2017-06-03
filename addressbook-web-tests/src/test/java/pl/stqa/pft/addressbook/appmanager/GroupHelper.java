@@ -42,4 +42,12 @@ public class GroupHelper extends HelperBase {
   public void selectGroup() {
     click(By.name("selected[]"));
   }
+
+  public void clickEditGroup(){
+    click(By.cssSelector("input[value='Edit group']"));
+  }
+
+  public void clickUpdateGroup(){
+    click(By.cssSelector("input[value='Update']"));
+  }
 }

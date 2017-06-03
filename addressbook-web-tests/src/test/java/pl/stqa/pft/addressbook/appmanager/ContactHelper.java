@@ -13,8 +13,14 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
-  public void goToContactsPage() {
-    wd.findElement(By.linkText("add new")).click();
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteContact() {
+    click(By.cssSelector("input[value='Delete']"));
+    wd.switchTo().alert().accept();
+
   }
 
   public void submitContactCreation() {
@@ -47,6 +53,13 @@ public class ContactHelper extends HelperBase {
 
   }
 
+  public void clickEditContact() {
+    click(By.cssSelector("img[title='Edit']"));
+  }
+
+  public void clickUpdateContact(){
+    click(By.cssSelector("input[value='Update']"));
+  }
 }
 
 
