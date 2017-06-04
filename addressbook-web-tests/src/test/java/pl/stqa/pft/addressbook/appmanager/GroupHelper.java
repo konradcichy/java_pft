@@ -43,11 +43,11 @@ public class GroupHelper extends HelperBase {
     click(By.name("selected[]"));
   }
 
-  public void clickEditGroup() {
+  public void initGroupModification() {
     click(By.cssSelector("input[value='Edit group']"));
   }
 
-  public void clickUpdateGroup() {
+  public void submitGroupModification() {
     click(By.cssSelector("input[value='Update']"));
   }
 
@@ -62,4 +62,5 @@ public class GroupHelper extends HelperBase {
     return isElementPresent(By.name("selected[]"));
 
   }
+
 }

@@ -13,7 +13,7 @@ public class ContactEditTests extends TestBase {
     app.getNavigationHelper().gotoContactsHomePage();
     app.getContactHelper().selectContact();
     app.getContactHelper().clickEditContact();
-    app.getContactHelper().fillContactForm(new ContactData("Christiano", "Ronaldo", "CR7", "CR7", "CR7", "CR Company", "Barcelona", null),false);
+    app.getContactHelper().fillContactForm(new ContactData("Christiano", "Ronaldo", "CR7", "CR7", "CR7", "CR Company", "Barcelona", null), false);
     app.getContactHelper().clickUpdateContact();
 
   }

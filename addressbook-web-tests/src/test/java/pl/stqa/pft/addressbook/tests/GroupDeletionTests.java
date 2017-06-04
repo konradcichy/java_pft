@@ -9,11 +9,12 @@ public class GroupDeletionTests extends TestBase {
   public void GroupDeletionTests() {
     app.getNavigationHelper().goToGroupPage();
     if (! app.getGroupHelper().isGroupExist()) {
-      app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+      app.getGroupHelper().createGroup(new GroupData("test12", null, null));
     }
-      app.getGroupHelper().selectGroup();
-      app.getGroupHelper().deleteSelectedGroups();
-      app.getGroupHelper().returnToGroupPage();
+    app.getGroupHelper().returnToGroupPage();
+    app.getGroupHelper().selectGroup();
+    app.getGroupHelper().deleteSelectedGroups();
+    app.getGroupHelper().returnToGroupPage();
 
   }
 }
