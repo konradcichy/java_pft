@@ -12,6 +12,9 @@ public class GroupEditTests extends TestBase {
   public void testGroupEdit() {
     app.getNavigationHelper().goToGroupPage();
     app.getGroupHelper().selectGroup();
+    if (! app.getGroupHelper().isGroupExist()) {
+      app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+    }
     app.getGroupHelper().clickEditGroup();
     app.getGroupHelper().fillGroupForm(new GroupData("newtest1", "newtest2", "newtest3"));
     app.getGroupHelper().clickUpdateGroup();
