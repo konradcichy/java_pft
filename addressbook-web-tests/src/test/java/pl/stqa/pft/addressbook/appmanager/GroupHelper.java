@@ -15,7 +15,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void returnToGroupPage() {
-    wd.findElement(By.linkText("groups"));
+    click(By.linkText("groups"));
   }
 
   public void submitGroupCreation() {

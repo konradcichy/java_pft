@@ -30,27 +30,15 @@ public class ContactHelper extends HelperBase {
   }
 
   public void fillContactForm(ContactData contactData, boolean creation) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getName());
-    wd.findElement(By.name("middlename")).click();
-    wd.findElement(By.name("middlename")).clear();
-    wd.findElement(By.name("middlename")).sendKeys(contactData.getMiddleName());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
-    wd.findElement(By.name("nickname")).click();
-    wd.findElement(By.name("nickname")).clear();
-    wd.findElement(By.name("nickname")).sendKeys(contactData.getNickName());
-    wd.findElement(By.name("title")).click();
-    wd.findElement(By.name("title")).clear();
-    wd.findElement(By.name("title")).sendKeys(contactData.getTitle());
-    wd.findElement(By.name("company")).click();
-    wd.findElement(By.name("company")).clear();
-    wd.findElement(By.name("company")).sendKeys(contactData.getCompany());
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
+
+
+    type(By.name("firstname"), contactData.getName());
+    type(By.name("middlename"), contactData.getMiddleName());
+    type(By.name("lastname"), contactData.getLastName());
+    type(By.name("nickname"), contactData.getNickName());
+    type(By.name("title"), contactData.getTitle());
+    type(By.name("company"), contactData.getCompany());
+    type(By.name("address"), contactData.getAddress());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -59,6 +47,10 @@ public class ContactHelper extends HelperBase {
     }
   }
 
+  public void createContact(ContactData contact, boolean creation) {
+    fillContactForm(contact, creation);
+    submitContactCreation();
+  }
 
   public void clickEditContact() {
     click(By.cssSelector("img[title='Edit']"));
@@ -67,6 +59,13 @@ public class ContactHelper extends HelperBase {
   public void clickUpdateContact() {
     click(By.cssSelector("input[value='Update']"));
   }
+
+  public boolean isContactExist() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
+
+
+
 
 
