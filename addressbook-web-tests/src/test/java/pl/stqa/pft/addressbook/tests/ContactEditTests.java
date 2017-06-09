@@ -14,7 +14,7 @@ public class ContactEditTests extends TestBase {
     if(! app.getContactHelper().isContactExist()){
       app.getNavigationHelper().goToContactsPage();
       app.getContactHelper().createContact(new ContactData("Michael", "Jordan", "MJK", "MJ", "MR", "Own company",
-              "null", "test1"), true);
+              "null", "test1"));
     }
     app.getNavigationHelper().gotoContactsHomePage();
     app.getContactHelper().selectContact();
