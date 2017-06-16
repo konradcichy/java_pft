@@ -34,20 +34,18 @@ public class ContactHelper extends HelperBase {
   }
 
   public void fillContactForm(ContactData contactData, boolean creation) {
-
-
-    type(By.name("firstname"), contactData.getName());
-    type(By.name("middlename"), contactData.getMiddleName());
-    type(By.name("lastname"), contactData.getLastName());
-    type(By.name("nickname"), contactData.getNickName());
-    type(By.name("title"), contactData.getTitle());
-    type(By.name("company"), contactData.getCompany());
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
     type(By.name("address"), contactData.getAddress());
+    type(By.name("home"), contactData.getHomePhone());
+    type(By.name("mobile"), contactData.getMobilePhone());
+    type(By.name("work"), contactData.getWorkPhone());
+    type(By.name("email"), contactData.getEmail());
 
-    if (creation) {
+    if(creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
+      Assert.assertFalse(isElementPresent((By.name("new_group"))));
     }
   }
 
