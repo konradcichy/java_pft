@@ -51,9 +51,20 @@ public class ContactHelper extends HelperBase {
     }
   }
 
+  public void initContactCreation() {
+    wd.findElement(By.linkText("add new")).click();
+  }
+
   public void createContact(ContactData contact) {
+
+    initContactCreation();
     fillContactForm(contact, true);
     submitContactCreation();
+    returnToHomePage();
+
+  }
+  public void returnToHomePage() {
+    wd.findElement(By.linkText("home")).click();
   }
 
   public void clickEditContact() {
