@@ -64,7 +64,6 @@ public class GroupHelper extends HelperBase {
 
   public boolean isGroupExist() {
     return isElementPresent(By.name("selected[]"));
-
   }
 
   public int getGroupCount() {
@@ -81,5 +80,12 @@ public class GroupHelper extends HelperBase {
       groups.add(group);
     }
     return groups;
+  }
+
+  public void ensureGroupExisting() {
+    returnToGroupPage();
+    if(! isGroupExist()){
+      createGroup(new GroupData("test1","test2","test3"));
+    }
   }
 }
