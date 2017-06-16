@@ -11,7 +11,7 @@ import pl.stqa.pft.addressbook.appmanager.ApplicationManager;
 public class TestBase {
 
 
-  protected  ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+  protected ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
   @BeforeMethod
   public void setUp() throws Exception {
