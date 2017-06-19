@@ -7,29 +7,34 @@ import pl.stqa.pft.addressbook.model.GroupData;
 
 import java.util.Set;
 
-public class GroupDeletionTests extends TestBase {
+/**
+ * Created by Konrad on 03/06/2017.
+ */
+public class GroupModificationTests extends TestBase {
 
   @BeforeMethod
   public void ensurePreconditions() {
     app.goTo().groupPage();
     if (app.group().all().size() == 0) {
       app.group().create(new GroupData().withName("test1").withHeader(null).withFooter(null));
-
     }
   }
 
   @Test(enabled = true)
-  public void GroupDeletionTests() {
+  public void testGroupEdit() {
     Set<GroupData> before = app.group().all();
-    GroupData deletedGroup = before.iterator().next();
-    app.group().delete(deletedGroup);
+    GroupData modifiedGroup = before.iterator().next();
+    GroupData group = new GroupData()
+            .withId(modifiedGroup.getId()).withName("test1").withHeader("newtest2").withFooter("newtest3");
+    app.group().modify(group);
     Set<GroupData> after = app.group().all();
-    Assert.assertEquals(after.size(), before.size() - 1);
+    Assert.assertEquals(after.size(), before.size());
 
-    before.remove(deletedGroup);
+
+    before.remove(modifiedGroup);
+    before.add(group);
     Assert.assertEquals(before, after);
   }
 
 
 }
-
