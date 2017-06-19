@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ContactCreationTests extends TestBase {
 
-  @Test
+  @Test(enabled = true)
   public void testContactCreation() {
     app.getGroupHelper().ensureGroupExisting();
     app.getNavigationHelper().gotoContactsHomePage();

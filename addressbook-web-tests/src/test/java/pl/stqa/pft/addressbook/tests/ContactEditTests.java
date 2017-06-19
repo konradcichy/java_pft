@@ -1,6 +1,7 @@
 package pl.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 
@@ -12,20 +13,27 @@ import java.util.List;
  */
 public class ContactEditTests extends TestBase {
 
-  @Test
-  public void testContactEdit() {
+  @BeforeMethod
+  public void ensurePreconditions() {
     app.getGroupHelper().ensureGroupExisting();
     app.getNavigationHelper().gotoContactsHomePage();
     if (!app.getContactHelper().isContactExist()) {
       app.getNavigationHelper().goToContactsPage();
-      app.getContactHelper().createContact(new ContactData("Mike", "Janovsky", "Los Angeles 11th Avenue", "home", null, null,
-              "emailmike@gmail.com", "test1"));
+      ContactData contact = new ContactData("Mike", "Janovsky", "Los Angeles 11th Avenue", "home", null, null,
+              "emailmike@gmail.com", "test1");
+      app.getContactHelper().createContact(contact);
+      app.getNavigationHelper().gotoContactsHomePage();
+
     }
-    app.getNavigationHelper().gotoContactsHomePage();
+  }
+
+  @Test(enabled = true)
+  public void testContactEdit() {
+
     List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().selectContact(before.size() - 1);
     app.getContactHelper().clickEditContact();
-    ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Mike2", "Janovsky2", "Los Angeles 11th Avenue2", "home2", null, null,
+    ContactData contact = new ContactData(before.get(before.size() - 1).getId(), "Mike2", "Janovsky2", "Los Angeles 11th Avenue2", "home2", null, null,
             "emailmike@gmail.com2", "test1");
     app.getContactHelper().fillContactForm(contact, false);
     app.getContactHelper().clickUpdateContact();
