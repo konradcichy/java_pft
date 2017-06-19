@@ -13,7 +13,7 @@ public class NavigationHelper extends HelperBase {
     super(wd);
   }
 
-  public void goToGroupPage() {
+  public void groupPage() {
     if ((isElementPresent(By.tagName("h1"))
             && wd.findElement(By.tagName("h1")).getText().equals("Groups"))
             && isElementPresent(By.name("new"))) {
@@ -23,7 +23,7 @@ public class NavigationHelper extends HelperBase {
 
   }
 
-  public void goToContactsPage() {
+  public void contactPage() {
     if(isElementPresent(By.tagName("h1"))
             && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")){
       return;
@@ -31,7 +31,7 @@ public class NavigationHelper extends HelperBase {
     wd.findElement(By.linkText("add new")).click();
   }
 
-  public void gotoContactsHomePage() {
+  public void contactHomePage() {
     if (isElementPresent(By.id("maintable"))) {
       return;
     }
