@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class ContactCreationTests extends TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void testContactCreation() {
     app.group().ensureGroupExisting();
     app.goTo().contactHomePage();
