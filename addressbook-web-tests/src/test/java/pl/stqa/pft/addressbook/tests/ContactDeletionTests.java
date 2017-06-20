@@ -4,10 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
-import pl.stqa.pft.addressbook.model.GroupData;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,7 +13,7 @@ import java.util.Set;
 public class ContactDeletionTests extends TestBase {
 
   @BeforeMethod
-  public void ensurePreconditions(){
+  public void ensurePreconditions() {
     app.group().ensureGroupExisting();
     app.goTo().contactPage();
     if (app.contact().list().size() == 0) {
@@ -40,7 +37,6 @@ public class ContactDeletionTests extends TestBase {
     before.remove(deletedContact);
     Assert.assertEquals(before, after);
   }
-
 
 
 }

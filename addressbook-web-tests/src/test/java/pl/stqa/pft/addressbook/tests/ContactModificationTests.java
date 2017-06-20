@@ -4,9 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
-import pl.stqa.pft.addressbook.model.GroupData;
 
-import java.util.Comparator;
 import java.util.Set;
 
 /**
@@ -29,7 +27,7 @@ public class ContactModificationTests extends TestBase {
     }
   }
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void ContactModificationTest() {
     app.goTo().contactHomePage();
     Set<ContactData> before = app.contact().list();
@@ -42,6 +40,7 @@ public class ContactModificationTests extends TestBase {
     Set<ContactData> after = app.contact().list();
     Assert.assertEquals(before.size(), after.size());
 
+  before.remove(modifiedContact);
     before.add(contact);
     Assert.assertEquals(before, after);
 
