@@ -16,7 +16,7 @@ public class ContactDeletionTests extends TestBase {
   public void ensurePreconditions() {
     app.group().ensureGroupExisting();
     app.goTo().contactPage();
-    if (app.contact().list().size() == 0) {
+    if (app.contact().all().size() == 0) {
       ContactData contact = new ContactData().withFirstName("Mike").withLastName("Janovsky")
               .withAddress("Los Angeles 11th Avenue").withHomePhone("home").withMobilePhone(null).withWorkPhone(null)
               .withEmail("emailmike@gmail.com").withGroup("test1");
@@ -28,10 +28,10 @@ public class ContactDeletionTests extends TestBase {
   @Test(enabled = true)
   public void testContactDeletion() {
     app.goTo().contactHomePage();
-    Set<ContactData> before = app.contact().list();
+    Set<ContactData> before = app.contact().all();
     ContactData deletedContact = before.iterator().next();
     app.contact().delete(deletedContact);
-    Set<ContactData> after = app.contact().list();
+    Set<ContactData> after = app.contact().all();
     Assert.assertEquals(after.size(), before.size() - 1);
 
     before.remove(deletedContact);

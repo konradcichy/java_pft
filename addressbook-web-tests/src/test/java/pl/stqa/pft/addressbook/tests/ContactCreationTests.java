@@ -14,12 +14,12 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation() {
     app.group().ensureGroupExisting();
     app.goTo().contactHomePage();
-    Set<ContactData> before = app.contact().list();
+    Set<ContactData> before = app.contact().all();
     ContactData contact = new ContactData().withFirstName("Mike").withLastName("Janovsky")
             .withAddress("Los Angeles 11th Avenue").withHomePhone("home").withMobilePhone(null).withWorkPhone(null)
             .withEmail("emailmike@gmail.com").withGroup("test1");
     app.contact().createContact(contact);
-    Set<ContactData> after = app.contact().list();
+    Set<ContactData> after = app.contact().all();
     Assert.assertEquals(after.size(), before.size() + 1);
 
     contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());

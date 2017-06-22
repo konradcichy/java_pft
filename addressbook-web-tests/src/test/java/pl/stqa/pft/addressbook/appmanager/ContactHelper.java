@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import pl.stqa.pft.addressbook.model.ContactData;
-import pl.stqa.pft.addressbook.model.GroupData;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,6 +28,7 @@ public class ContactHelper extends HelperBase {
 
     wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
+
 
   public void deleteContact() {
     click(By.cssSelector("input[value='Delete']"));
@@ -72,7 +71,7 @@ public class ContactHelper extends HelperBase {
 
   public void modify(ContactData contact) {
     selectContactById(contact.getId());
-    clickEditContact();
+    initContactModification();
     fillContactForm(contact, false);
     submitContactModification();
     returnToHomePage();
@@ -84,11 +83,12 @@ public class ContactHelper extends HelperBase {
     deleteContact();
     returnToHomePage();
   }
+
   public void returnToHomePage() {
     wd.findElement(By.linkText("home")).click();
   }
 
-  public void clickEditContact() {
+  public void initContactModification() {
     click(By.cssSelector("img[title='Edit']"));
   }
 
@@ -101,7 +101,7 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public Set<ContactData> list() {
+  public Set<ContactData> all() {
     Set<ContactData> contacts = new HashSet<>();
     List<WebElement> elements = wd.findElements(By.cssSelector("#maintable tr[name='entry']"));
     for (WebElement element : elements) {
