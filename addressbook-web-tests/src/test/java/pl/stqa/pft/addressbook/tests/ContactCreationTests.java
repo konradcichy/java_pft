@@ -1,9 +1,13 @@
 package pl.stqa.pft.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
+
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Created by Konrad on 31/05/2017.
@@ -20,11 +24,11 @@ public class ContactCreationTests extends TestBase {
             .withEmail("emailmike@gmail.com").withGroup("test1");
     app.contact().createContact(contact);
     Set<ContactData> after = app.contact().all();
-    Assert.assertEquals(after.size(), before.size() + 1);
+    assertEquals(after.size(), equalTo(before.size() + 1));
 
     contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
     before.add(contact);
-    Assert.assertEquals(before, after);
+    assertThat(after, equalTo(before));
   }
 
 
