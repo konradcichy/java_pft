@@ -60,7 +60,7 @@ public class ContactData {
 
     ContactData that = (ContactData) o;
 
-    if (id != that.id) return false;
+//    if (id != that.id) return false;
     if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
     return lastName != null ? lastName.equals(that.lastName) : that.lastName == null;
 

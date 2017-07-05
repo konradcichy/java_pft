@@ -29,6 +29,10 @@ public class ContactHelper extends HelperBase {
 
   }
 
+  public int Count(){
+    return wd.findElements(By.cssSelector("#maintable tr[name='entry']")).size();
+  }
+
 
   public void deleteContact() {
     click(By.cssSelector("input[value='Delete']"));
