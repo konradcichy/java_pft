@@ -24,9 +24,8 @@ public class ContactModificationTests extends TestBase {
     if (app.contact().all().size() == 0) {
       app.goTo().contactPage();
       ContactData contact = new ContactData().withFirstName("Mike").withLastName("Janovsky")
-              .withAddress("Los Angeles 11th Avenue").withHomePhone("home").withWorkPhone(null)
-              .withMobilePhone(null)
-              .withEmail("emailmike@gmail.com").withGroup("test1");
+              .withAddress("Los Angeles 11th Avenue").withHomePhone("111").withMobilePhone("3333")
+              .withWorkPhone("4444").withEmail("emailmike@gmail.com").withGroup("test1");
       app.contact().createContact(contact);
 
     }

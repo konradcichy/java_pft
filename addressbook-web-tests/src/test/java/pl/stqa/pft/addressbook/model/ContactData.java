@@ -3,21 +3,33 @@ package pl.stqa.pft.addressbook.model;
 public class ContactData {
 
   private int id = Integer.MAX_VALUE;
-  private  String firstName;
-  private  String lastName;
-  private  String address;
-  private  String homePhone;
-  private  String mobilePhone;
-  private  String workPhone;
-  private  String email;
-  private  String group;
+  private String firstName;
+  private String lastName;
+  private String address;
+  private String homePhone;
+  private String mobilePhone;
+  private String workPhone;
+  private String email;
+  private String group;
+  private String allPhones;
 
-  public  ContactData withFirstName(String firstName) {
+
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
+
+
+  public ContactData withFirstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-  public  ContactData withId(int id) {
+  public ContactData withId(int id) {
     this.id = id;
     return this;
   }
