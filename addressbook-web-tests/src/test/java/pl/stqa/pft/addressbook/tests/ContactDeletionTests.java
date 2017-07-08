@@ -1,12 +1,9 @@
 package pl.stqa.pft.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 import pl.stqa.pft.addressbook.model.Contacts;
-
-import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,7 +21,7 @@ public class ContactDeletionTests extends TestBase {
       ContactData contact = new ContactData().withFirstName("Mike").withLastName("Janovsky")
               .withAddress("Los Angeles 11th Avenue").withHomePhone("111").withMobilePhone("222").withWorkPhone("333")
               .withEmail("emailmike@gmail.com").withGroup("test1");
-      app.contact().createContact(contact);
+      app.contact().create(contact);
     }
   }
 

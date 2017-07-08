@@ -66,15 +66,15 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData()
-              .withFirstName(String.format("Firstname %s", i))
-              .withLastName(String.format("Lastname %s", i))
-              .withAddress(String.format("Address %s", i))
-              .withHomePhone(String.format(" %s" + generator.nextInt(1000000000), i))
-              .withMobilePhone(String.format(" %s" + generator.nextInt(1000000000), i))
+              .withFirstName(String.format("Firstname%s", i))
+              .withLastName(String.format("Lastname%s", i))
+              .withAddress(String.format("Address%s", i))
+              .withHomePhone(String.format("%s" + generator.nextInt(1000000000), i))
+              .withMobilePhone(String.format("%s" + generator.nextInt(1000000000), i))
               .withWorkPhone(String.format(" %s" + generator.nextInt(1000000000), i))
-              .withEmail(String.format("1st_email %s@yahoo.com", i))
-              .withEmail2(String.format("2nd_email %s@yahoo.com", i))
-              .withEmail3(String.format("3rd_email %s@yahoo.com", i))
+              .withEmail(String.format("1st_email%s@yahoo.com", i))
+              .withEmail2(String.format("2nd_email%s@yahoo.com", i))
+              .withEmail3(String.format("3rd_email%s@yahoo.com", i))
               .withGroup(String.format("Test1")));
 
     }

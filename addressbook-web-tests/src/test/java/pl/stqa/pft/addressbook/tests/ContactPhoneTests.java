@@ -25,7 +25,7 @@ public class ContactPhoneTests extends TestBase {
               .withAddress("Los Angeles 11th Avenue").withHomePhone("111").withMobilePhone("222").withWorkPhone("333")
               .withEmail("emailmike@gmail.com").withEmail2("hackme@gmail.com").withEmail3("hackmetoo@gmail.com")
               .withGroup("test1");
-      app.contact().createContact(contact);
+      app.contact().create(contact);
     }
   }
 
