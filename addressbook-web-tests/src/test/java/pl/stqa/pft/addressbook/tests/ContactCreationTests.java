@@ -32,7 +32,7 @@ public class ContactCreationTests extends TestBase {
     String line = reader.readLine();
     while (line != null) {
       String[] split = line.split(";");
-      File photo = new File("src/test/resources/grumpy_cat.jpg");
+      File photo = new File("src/test/resources/Small-mario.png");
       list.add(new Object[]{new ContactData()
               .withFirstName(split[0])
               .withLastName(split[1])
