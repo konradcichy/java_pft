@@ -1,0 +1,38 @@
+<list>
+  <pl.stqa.pft.addressbook.model.ContactData>
+    <firstName>Firstname 0</firstName>
+    <lastName>Lastname 0</lastName>
+    <address>Address 0</address>
+    <homePhone> 0991627086</homePhone>
+    <mobilePhone> 0111196564</mobilePhone>
+    <workPhone> 0437262688</workPhone>
+    <email>1st_email 0@yahoo.com</email>
+    <email2>2nd_email 0@yahoo.com</email2>
+    <email3>3rd_email 0@yahoo.com</email3>
+    <group>Test1</group>
+  </pl.stqa.pft.addressbook.model.ContactData>
+  <pl.stqa.pft.addressbook.model.ContactData>
+    <firstName>Firstname 1</firstName>
+    <lastName>Lastname 1</lastName>
+    <address>Address 1</address>
+    <homePhone> 1737505101</homePhone>
+    <mobilePhone> 1564321039</mobilePhone>
+    <workPhone> 1723042339</workPhone>
+    <email>1st_email 1@yahoo.com</email>
+    <email2>2nd_email 1@yahoo.com</email2>
+    <email3>3rd_email 1@yahoo.com</email3>
+    <group>Test1</group>
+  </pl.stqa.pft.addressbook.model.ContactData>
+  <pl.stqa.pft.addressbook.model.ContactData>
+    <firstName>Firstname 2</firstName>
+    <lastName>Lastname 2</lastName>
+    <address>Address 2</address>
+    <homePhone> 2565069574</homePhone>
+    <mobilePhone> 2678012676</mobilePhone>
+    <workPhone> 2386954802</workPhone>
+    <email>1st_email 2@yahoo.com</email>
+    <email2>2nd_email 2@yahoo.com</email2>
+    <email3>3rd_email 2@yahoo.com</email3>
+    <group>Test1</group>
+  </pl.stqa.pft.addressbook.model.ContactData>
+</list>

@@ -1,0 +1,38 @@
+[
+  {
+    "firstName": "Firstname0",
+    "lastName": "Lastname0",
+    "address": "Address0",
+    "homePhone": "0193090957",
+    "mobilePhone": "0749077360",
+    "workPhone": " 0905790349",
+    "email": "1st_email0@yahoo.com",
+    "email2": "2nd_email0@yahoo.com",
+    "email3": "3rd_email0@yahoo.com",
+    "group": "Test1"
+  },
+  {
+    "firstName": "Firstname1",
+    "lastName": "Lastname1",
+    "address": "Address1",
+    "homePhone": "163698633",
+    "mobilePhone": "1826412900",
+    "workPhone": " 1638014889",
+    "email": "1st_email1@yahoo.com",
+    "email2": "2nd_email1@yahoo.com",
+    "email3": "3rd_email1@yahoo.com",
+    "group": "Test1"
+  },
+  {
+    "firstName": "Firstname2",
+    "lastName": "Lastname2",
+    "address": "Address2",
+    "homePhone": "2456278767",
+    "mobilePhone": "2780999767",
+    "workPhone": " 2801792001",
+    "email": "1st_email2@yahoo.com",
+    "email2": "2nd_email2@yahoo.com",
+    "email3": "3rd_email2@yahoo.com",
+    "group": "Test1"
+  }
+]
