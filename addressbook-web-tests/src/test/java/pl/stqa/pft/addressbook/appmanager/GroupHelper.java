@@ -105,7 +105,7 @@ public class GroupHelper extends HelperBase {
   public void ensureGroupExisting() {
     returnToGroupPage();
     if (!isGroupExist()) {
-      create(new GroupData().withName("test1").withHeader("test2").withFooter("test3"));
+      create(new GroupData().withName("Test1").withHeader("test2").withFooter("test3"));
     }
   }
 
