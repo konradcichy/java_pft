@@ -16,6 +16,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.thoughtworks.xstream:xstream:1.4.10" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: com.google.code.gson:gson:2.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: mysql:mysql-connector-java:5.1.42" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-chrome-driver:2.53.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.seleniumhq.selenium:selenium-edge-driver:2.53.0" level="project" />
