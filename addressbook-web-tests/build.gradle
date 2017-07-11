@@ -12,6 +12,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'mysql:mysql-connector-java:5.1.42'
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
 
 }
 
@@ -26,7 +27,6 @@ task testGroups(type: Test) {
     }
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
-
     }
 }
 
