@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,7 @@ public class ContactTestData extends TestBase {
     app.group().ensureGroupExisting();
     app.goTo().contactHomePage();
     if (app.contact().all().size() == 0) {
+      File photo = new File("src/test/resources/Small-mario.png");
       ContactData contact = new ContactData()
               .withFirstName("Mike")
               .withLastName("Janovsky")
@@ -30,7 +32,8 @@ public class ContactTestData extends TestBase {
               .withEmail("emailmike@gmail.com")
               .withEmail2("hackme@gmail.com")
               .withEmail3("hackmetoo@gmail.com")
-              .withGroup("Test1");
+              .withGroup("Test1")
+              .withPhoto(photo);
       app.contact().create(contact);
     }
   }
