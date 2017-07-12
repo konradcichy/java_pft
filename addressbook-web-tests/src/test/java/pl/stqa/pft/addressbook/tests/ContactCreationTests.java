@@ -88,10 +88,10 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation(ContactData contact) {
     app.group().ensureGroupExisting();
     app.goTo().contactHomePage();
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     app.contact().create(contact);
     assertThat(app.contact().Count(), equalTo(before.size() + 1));
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
