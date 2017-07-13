@@ -24,9 +24,14 @@ public class ContactModificationTests extends TestBase {
 
     if (app.db().contacts().size() == 0) {
       app.goTo().contactPage();
-      ContactData contact = new ContactData().withFirstName("Mike").withLastName("Janovsky")
-              .withAddress("Los Angeles 11th Avenue").withHomePhone("111").withMobilePhone("3333")
-              .withWorkPhone("4444").withEmail("emailmike@gmail.com").withGroup("Test1");
+      ContactData contact = new ContactData()
+              .withFirstName("Mike")
+              .withLastName("Janovsky")
+              .withAddress("Los Angeles 11th Avenue")
+              .withHomePhone("111").withMobilePhone("3333")
+              .withWorkPhone("4444")
+              .withEmail("emailmike@gmail.com")
+              .withGroup("Test1");
       app.contact().create(contact);
 
     }
@@ -43,7 +48,8 @@ public class ContactModificationTests extends TestBase {
             .withLastName("Janovsky2")
             .withAddress("Los Angeles 11th Avenue2")
             .withHomePhone("home2")
-            .withWorkPhone(null).withMobilePhone(null)
+            .withWorkPhone("1111-2222-3333")
+            .withMobilePhone("1111-2222-3333")
             .withMobilePhone("11132423423-22")
             .withEmail("emailmike@gmail.com2")
             .withEmail2("newemail@wp.com")
