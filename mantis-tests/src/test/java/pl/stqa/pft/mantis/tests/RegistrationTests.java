@@ -20,12 +20,13 @@ public class RegistrationTests extends TestBase {
   @BeforeMethod
   public void startMailServer() {
     app.mail().start();
+
   }
 
   @Test
   public void testRegistration() throws IOException, MessagingException {
-    String email = "user1@localhost.localdomain";
-    String user = "user1";
+    String email = "user9@localhost.localdomain";
+    String user = "user9";
     String password = "password";
 
     app.registration().start(user, email);
