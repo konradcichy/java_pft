@@ -89,7 +89,7 @@ public class ContactCreationTests extends TestBase {
     app.group().ensureGroupExisting();
     app.goTo().contactHomePage();
     Contacts before = app.db().contacts();
-    app.contact().create(contact);
+    app.contact().create(contact,true);
     assertThat(app.contact().Count(), equalTo(before.size() + 1));
     Contacts after = app.db().contacts();
     assertThat(after, equalTo(

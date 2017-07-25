@@ -9,6 +9,8 @@ import ru.lanwen.verbalregex.VerbalExpression;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
+
 
 import static org.testng.Assert.assertTrue;
 
@@ -17,17 +19,20 @@ import static org.testng.Assert.assertTrue;
  */
 public class RegistrationTests extends TestBase {
 
+
   @BeforeMethod
   public void startMailServer() {
+
     app.mail().start();
 
   }
 
   @Test
   public void testRegistration() throws IOException, MessagingException {
-    String email = "user9@localhost.localdomain";
-    String user = "user9";
-    String password = "password";
+    long now = System.currentTimeMillis();
+    String email = String.format(app.getProperty("web.userEmail"),now);
+    String user = String.format(app.getProperty("web.userLogin"),now);
+    String password = String.format(app.getProperty("web.userPassword"),now);
 
     app.registration().start(user, email);
     List<MailMessage> mailMessages = app.mail().waitForMail(2, 1000);

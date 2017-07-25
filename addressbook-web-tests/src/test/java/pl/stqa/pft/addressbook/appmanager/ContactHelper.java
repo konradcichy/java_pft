@@ -40,6 +40,10 @@ public class ContactHelper extends HelperBase {
 
   }
 
+  public void viewContact(int id) {
+    wd.findElement(By.cssSelector(String.format("a[href='view.php?id=%s']", id))).click();
+  }
+
   public void submitContactCreation() {
     wd.findElement(By.cssSelector("input[name='submit']")).click();
   }
@@ -57,10 +61,12 @@ public class ContactHelper extends HelperBase {
     attach(By.name("photo"), contactData.getPhoto());
 
 
-    if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent((By.name("new_group"))));
+    if(creation) {
+      if(contactData.getGroup() != null) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+      } else {
+        Assert.assertFalse(isElementPresent((By.name("new_group"))));
+      }
     }
   }
 
@@ -68,10 +74,10 @@ public class ContactHelper extends HelperBase {
     wd.findElement(By.linkText("add new")).click();
   }
 
-  public void create(ContactData contact) {
+  public void create(ContactData contact, boolean creation) {
 
     initContactCreation();
-    fillContactForm(contact, true);
+    fillContactForm(contact, creation);
     submitContactCreation();
     contactCache = null;
     returnToHomePage();
@@ -168,7 +174,34 @@ public class ContactHelper extends HelperBase {
             .withEmail3(email3);
   }
 
+  public ContactData infoFromViewForm(ContactData contact) {
+    viewContact(contact.getId());
+    String contactInfo = wd.findElement(By.id("content")).getText();
+    contactInfo = contactInfo
+            .replaceFirst("\\s", ";")
+            .replace("H: ", "")
+            .replace("M: ", "")
+            .replace("W: ", "")
+            .replace("Member of: ", "")
+            .replaceAll("\\n", ";");
+    String[] split = contactInfo.split(";");
+    System.out.println("CONTACT INFO IS " +contactInfo);
+    return new ContactData()
+            .withFirstName(split[0])
+            .withLastName(split[1])
+            .withAddress(split[2])
+            .withHomePhone(split[4])
+            .withMobilePhone(split[5])
+            .withWorkPhone(split[6])
+            .withEmail(split[8])
+            .withEmail2(split[9])
+            .withEmail3(split[10])
+            .withGroup(split[13]);
+  }
 }
+
+
+
 
 
 

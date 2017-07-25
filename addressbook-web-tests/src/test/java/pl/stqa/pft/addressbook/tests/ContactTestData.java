@@ -34,7 +34,7 @@ public class ContactTestData extends TestBase {
               .withEmail3("hackmetoo@gmail.com")
               .withGroup("Test1")
               .withPhoto(photo);
-      app.contact().create(contact);
+      app.contact().create(contact,true);
     }
   }
 

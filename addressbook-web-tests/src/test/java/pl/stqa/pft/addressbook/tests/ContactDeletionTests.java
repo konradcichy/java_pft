@@ -32,7 +32,7 @@ public class ContactDeletionTests extends TestBase {
               .withWorkPhone("333")
               .withEmail("emailmike@gmail.com")
               .withGroup("test1");
-      app.contact().create(contact);
+      app.contact().create(contact,true);
     }
   }
 
