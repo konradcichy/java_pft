@@ -24,13 +24,13 @@ public class PointTests {
     Assert.assertEquals(c.calculatePointsDistance(d), 0.0);
   }
 
-//  @Test
-//  public void negativeTest() {
-//    Point e = new Point(-1, -1);
-//    Point f = new Point(0, 2435338.00000020);
-//
-//    Assert.assertEquals(e.calculatePointsDistance(f), 1.0);
-//  }
+  @Test
+  public void negativeTest() {
+    Point e = new Point(-1, -1);
+    Point f = new Point(0, 2435338.00000020);
+
+    Assert.assertEquals(e.calculatePointsDistance(f), 1.0);
+  }
 
   @Test void floatingTest(){
     Point g = new Point(2.43353,1.0894);
