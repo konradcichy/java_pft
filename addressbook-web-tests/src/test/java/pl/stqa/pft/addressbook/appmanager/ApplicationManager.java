@@ -1,6 +1,7 @@
 package pl.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -61,6 +62,7 @@ public class ApplicationManager {
     }else{
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setBrowserName(browser);
+      capabilities.setPlatform(Platform.fromString(System.getProperty("platform", "win7")));
       wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilities);
     }
 
